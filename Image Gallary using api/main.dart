@@ -33,6 +33,8 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
 
   List imgList = [];
+  
+  bool isLoading = false;
 
   @override
   void initState() {
@@ -50,7 +52,28 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           children: [
             Text("Abstract Images", style: cstmTextStyle(fc: Colors.black),),
-            GridView.builder(
+            isLoading
+            ? Center(
+              child: Container(
+                margin: EdgeInsets.all(10.0),
+                padding: EdgeInsets.all(200.0),
+                height: 500,
+                width: 500,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10.0),
+                  gradient: LinearGradient(
+                    colors: [
+                      Colors.purple,
+                      Colors.pinkAccent.shade200,
+                    ],
+                    begin: Alignment.topCenter,
+                    end: Alignment.bottomCenter,
+                  ),
+                ),
+                child: CircularProgressIndicator(),
+              ),
+            )
+            : GridView.builder(
               padding: EdgeInsets.all(20.0),
               shrinkWrap: true,
               physics: NeverScrollableScrollPhysics(),
