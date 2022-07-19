@@ -10,3 +10,19 @@ cstmTextStyle({fs, fw, fc}){
     fontFamily: "Inter",
   );
 }
+
+
+cstmLoadingDialog({required context, required desc}){
+  showDialog(
+      context: context,
+      builder: (context){
+        return AlertDialog(
+          backgroundColor: Colors.transparent,
+          elevation: 0.0,
+          actions: [
+            cstmLoadingDialog(context: context, desc: desc),
+          ],
+        );
+      },
+  );
+}
