@@ -10,13 +10,21 @@ class contact_app extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          title: Text("Contact"),
-          backgroundColor: Colors.teal,
+          title: Text("Contact", style: TextStyle(
+            color: Colors.orangeAccent,
+          ),
+          ),
+          elevation: 0,
+          backgroundColor: Colors.white,
         ),
-        backgroundColor: Colors.cyanAccent,
-//        body: ,
+        body: Column(
+          children: [
+            Image.asset("images/contact.jpg"),
+          ],
+        ),
       ),
     );
   }
