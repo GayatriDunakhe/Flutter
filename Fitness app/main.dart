@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+
+import 'Components/DaysComponent.dart';
+import 'Components/Header.dart';
 
 void main() {
   runApp(const MyApp());
@@ -44,24 +46,14 @@ class _MyHomePageState extends State<MyHomePage> {
           child: Center(
             child: Column(
               children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Expanded(
-                        child: Text(
-                          "Today",
-                          textAlign: TextAlign.center,
-                          style: GoogleFonts.getFont(
-                            "Inter",
-                            fontSize: 24,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.white,
-                          ),
 
-                        )),
-                    Icon(Icons.more_horiz),
-                  ],
-                )
+                Header(),
+
+                const SizedBox(
+                  height: 20,
+                ),
+
+                DaysComponent(),
               ],
             ),
           ),
