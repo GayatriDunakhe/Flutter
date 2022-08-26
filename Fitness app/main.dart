@@ -54,6 +54,12 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
 
                 DaysComponent(),
+                
+                const SizedBox(
+                    height: 10,
+                  ),
+
+                BackgroundCircles(),
               ],
             ),
           ),
