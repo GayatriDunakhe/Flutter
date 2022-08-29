@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'Components/Background.dart';
 import 'Components/DaysComponent.dart';
 import 'Components/Header.dart';
 
@@ -31,36 +32,41 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
+
+    double screenWidth = MediaQuery.of(context).size.width;
+
     return Scaffold(
-      body: Center(
-        child: Container(
-          padding: EdgeInsets.all(20.0),
-          decoration: BoxDecoration(
-            gradient: LinearGradient(
-              colors: [
-                Color(0xFFFFA6DB).withOpacity(0.70),
-                Color(0xFFFF46B5).withOpacity(0.70),
-              ],
-            )
-          ),
-          child: Center(
-            child: Column(
-              children: [
+      body: SingleChildScrollView(
+        child: Center(
+          child: Container(
+            padding: EdgeInsets.only(top: 20.0, bottom: 20.0),
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                colors: [
+                  Color(0xFFFFA6DB).withOpacity(0.70),
+                  Color(0xFFFF46B5).withOpacity(0.70),
+                ],
+              )
+            ),
+            child: Center(
+              child: Column(
+                children: [
 
-                Header(),
+                  Header(),
 
-                const SizedBox(
-                  height: 20,
-                ),
+                  const SizedBox(
+                    height: 20,
+                  ),
 
-                DaysComponent(),
-                
-                const SizedBox(
+                  DaysComponent(),
+
+                  const SizedBox(
                     height: 10,
                   ),
 
-                BackgroundCircles(),
-              ],
+                  BackgroundCircles(screenWidth),
+                ],
+              ),
             ),
           ),
         ),
