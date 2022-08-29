@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:proste_bezier_curve/proste_bezier_curve.dart';
 
-BackgroundCircles(){
+BackgroundCircles(screenWidth){
+
   return Stack(
     alignment: Alignment.center,
     children: [
@@ -30,21 +32,28 @@ BackgroundCircles(){
           color: Colors.white,
         ),
       ),
+
+
+      ClipPath(
+        clipper: ProsteBezierCurve(
+            list: [
+              BezierCurveSection(
+                start: Offset(screenWidth, 0),
+                top: Offset(screenWidth / 4 * 3, 60),
+                end: Offset(screenWidth / 2, 30),
+              ),
+              BezierCurveSection(
+                start: Offset(screenWidth / 2, 30),
+                top: Offset(screenWidth / 4, 0),
+                end: Offset(0, 30),
+              ),
+            ]
+        ),
+        child: Container(
+          height: 200,
+          color: Colors.white.withOpacity(0.60),
+        ),
+      ),
     ],
   );
-}
-
-class Background extends CustomClipper<Path>{
-  @override
-  Path getClip(Size size) {
-    // TODO: implement getClip
-    throw UnimplementedError();
-  }
-
-  @override
-  bool shouldReclip(covariant CustomClipper<Path> oldClipper) {
-    // TODO: implement shouldReclip
-    throw UnimplementedError();
-  }
-  
 }
