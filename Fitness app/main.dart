@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'Components/Background.dart';
 import 'Components/DaysComponent.dart';
 import 'Components/Header.dart';
+import 'Functions/CustomTextStyle.dart';
 
 void main() {
   runApp(const MyApp());
@@ -35,6 +36,13 @@ class _MyHomePageState extends State<MyHomePage> {
 
     double screenWidth = MediaQuery.of(context).size.width;
 
+    List times = [
+      "Morning",
+      "Afternoon",
+      "Eveining",
+      "Night",
+    ];
+
     return Scaffold(
       body: SingleChildScrollView(
         child: Center(
@@ -65,6 +73,37 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
 
                   BackgroundCircles(screenWidth),
+
+                  Container(
+                    height: 200,
+//                    width: screenWidth,
+                    color: Colors.white,
+                    child: ListView.builder(
+                      scrollDirection: Axis.horizontal,
+                      itemCount: times.length,
+                      itemBuilder: (BuildContext context, int index){
+                        return Center(
+                          child: Container(
+                            padding: EdgeInsets.only(left:50, right: 50),
+                            child: Column(
+                              children: [
+                                Text(times[index], style: cstmTextStyle(fs:20, fw:FontWeight.bold, fc: Colors.black54),),
+                                SizedBox(height: 10,),
+                                Text("1 habbit", style: cstmTextStyle(fs:14, fc: Colors.black45),),
+                              ],
+                            ),
+                          ),
+                        );
+                      },
+                    ),
+                  ),
+                  Container(
+                    height: 15,
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      color: Colors.pink,
+                    ),
+                  ),
                 ],
               ),
             ),
@@ -74,3 +113,27 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
+
+//Row(
+//mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+//children: [
+//Column(
+//children: [
+//Text("Morning"),
+//Text("1 habbit"),
+//],
+//),
+//Column(
+//children: [
+//Text("Afternoon"),
+//Text("1 habbit"),
+//],
+//),
+//Column(
+//children: [
+//Text("Evening"),
+//Text("1 habbit"),
+//],
+//),
+//],
+//),
