@@ -51,25 +51,42 @@ class _MyHomePageState extends State<MyHomePage> {
               )
             ),
             child: Center(
-              child: Column(
-                children: [
+              child:Container(
+//                color: Colors.white,
+                child: Column(
+                  children: [
 
-                  Header(),
+                    Header(),
 
-                  const SizedBox(
-                    height: 20,
-                  ),
+                    const SizedBox(
+                      height: 20,
+                    ),
 
-                  DaysComponent(),
+                    DaysComponent(),
 
-                  const SizedBox(
-                    height: 10,
-                  ),
+                    const SizedBox(
+                      height: 10,
+                    ),
 
-                  BackgroundCircles(screenWidth),
-                  HabbitsComponent(),
+                    BackgroundCircles(screenWidth),
 
-                ],
+                    HabbitsComponent(),
+
+                    Container(
+                      height: 100,
+                      width: screenWidth,
+                      padding: EdgeInsets.all(20.0),
+                      color: Colors.white,
+                      child: Container(
+                        decoration: BoxDecoration(
+                            color: Colors.pink,
+                            borderRadius: BorderRadius.circular(12.0)
+                        ),
+                      ),
+                    )
+
+                  ],
+                ),
               ),
             ),
           ),
@@ -78,26 +95,3 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
-
-//Row(
-//mainAxisAlignment: MainAxisAlignment.center,
-//children: [
-//Container(
-//height: 10,
-//width: 10,
-//decoration: const BoxDecoration(
-//shape: BoxShape.circle,
-//color: Color(0xffD9D9D9),
-//),
-//),
-//const SizedBox(width: 5,),
-//Container(
-//height: 10,
-//width: 10,
-//decoration: const BoxDecoration(
-//shape: BoxShape.circle,
-//color: Colors.pink,
-//),
-//),
-//],
-//),
