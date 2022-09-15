@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'Components/Background.dart';
 import 'Components/DaysComponent.dart';
+import 'Components/ExerciseComponent.dart';
 import 'Components/HabbitsComponent.dart';
 import 'Components/Header.dart';
 import 'Functions/CustomTextStyle.dart';
@@ -72,18 +73,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
                     HabbitsComponent(),
 
-                    Container(
-                      height: 100,
-                      width: screenWidth,
-                      padding: EdgeInsets.all(20.0),
-                      color: Colors.white,
-                      child: Container(
-                        decoration: BoxDecoration(
-                            color: Colors.pink,
-                            borderRadius: BorderRadius.circular(12.0)
-                        ),
-                      ),
-                    )
+                    ExerciseComponent(),
 
                   ],
                 ),
