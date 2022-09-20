@@ -82,6 +82,55 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
         ),
       ),
+      bottomNavigationBar: Container(
+        padding: EdgeInsets.only(left: 25, right: 25),
+        height: 50,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.only(topLeft: Radius.circular(20), topRight: Radius.circular(20)),
+          color: Colors.white,
+          boxShadow: [
+            BoxShadow(
+            color: Colors.black12,
+            offset: Offset(0, 0),
+            blurRadius: 50,
+            spreadRadius: 1,
+          )
+          ]
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Icon(Icons.wb_sunny, color: Color(0xffFE0098),),
+
+            Material(
+              borderRadius: BorderRadius.circular(50),
+              child: Container(
+                height: 50,
+                width: 50,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(50),
+                    gradient: LinearGradient(
+                      colors: [
+                        Color(0xFFFE0098).withOpacity(0.70),
+                        Color(0xFFFF8A00).withOpacity(0.70),
+                      ],
+                    )
+
+                ),
+                child: IconButton(
+                  onPressed: (){
+                    print("add");
+                  },
+                  icon: Icon(Icons.add),
+                  color: Colors.white,
+
+                ),
+              ),
+            ),
+            Icon(Icons.pie_chart_outline)
+          ],
+        ),
+      ),
     );
   }
 }
