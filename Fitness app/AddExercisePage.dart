@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'Components/Header.dart';
+import 'Functions/CustomTextStyle.dart';
 
 class AddExercisePage extends StatefulWidget{
   @override
@@ -26,7 +27,48 @@ class _AddExercisePageState extends State<AddExercisePage> {
             child: Container(
               child: Column(
                 children: [
-                  ExerciseHeader(),
+                    Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      IconButton(
+                        onPressed: (){
+                            Navigator.pop(context);
+                        },
+                        icon: Icon(Icons.arrow_back),
+                        splashRadius: 20,
+                      ),
+                      Expanded(
+                          child: Text(
+                            "Exercise",
+                            textAlign: TextAlign.center,
+                            style: cstmTextStyle(fs:24,fc: Colors.white),
+
+                          )),
+                      IconButton(
+                        onPressed: (){},
+                        icon: Icon(Icons.more_horiz),
+                        splashRadius: 20,
+                      ),
+
+                    ],
+                  ),
+
+                  Container(
+                    padding: EdgeInsets.all(20),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Row(
+                          children: [
+                            Icon(Icons.access_time,),
+                            SizedBox(width: 20,),
+                            Text("Ever afternoon", style: cstmTextStyle(fs: 18, fc: Colors.black54, fw: FontWeight.bold),),
+                          ],
+                        ),
+                        Icon(Icons.keyboard_arrow_right,),
+                      ],
+                    ),
+                  ),
                 ],
               ),
             ),
