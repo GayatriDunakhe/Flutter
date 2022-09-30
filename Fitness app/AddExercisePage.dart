@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:table_calendar/table_calendar.dart';
 
 import 'Components/Header.dart';
 import 'Functions/CustomTextStyle.dart';
@@ -62,6 +63,18 @@ class _AddExercisePageState extends State<AddExercisePage> {
                           children: [
                             Row(
                               children: [
+//                                ShaderMask(
+//                                  shaderCallback: (Rect bounds) => RadialGradient(
+//                                      center: Alignment.center,
+//                                      radius: 0.5,
+//                                      colors: [
+//                                        Colors.pink,
+//                                        Colors.deepOrange,
+//                                      ],
+//                                    tileMode: TileMode.mirror,
+//                                  ).createShader(bounds),
+//                                  child: Icon(Icons.access_time,),
+//                                ),
                                 Icon(Icons.access_time,),
                                 SizedBox(width: 20,),
                                 Text("Ever afternoon", style: cstmTextStyle(fs: 18, fc: Colors.black54, fw: FontWeight.bold),)
@@ -95,21 +108,38 @@ class _AddExercisePageState extends State<AddExercisePage> {
                       ],
                     ),
                   ),
+
                   Container(
                     padding: EdgeInsets.all(20),
-                    child: TableCalendar(
-                      calendarStyle: CalendarStyle(
-                        defaultTextStyle: cstmTextStyle(fs:18,fc: Colors.black54),
-                        weekendTextStyle: cstmTextStyle(fs:18,fc: Colors.black54),
-                        todayTextStyle: cstmTextStyle(fs:18,fc: Color(0xFFFF46B5).withOpacity(0.70),),
-                        todayDecoration: BoxDecoration(
-                          color: Colors.white,
-                          shape: BoxShape.circle,),
+                    child: Container(
+                      padding: EdgeInsets.all(20),
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(12.0),
                       ),
-                      headerVisible: false,
-                      focusedDay: DateTime.now(),
-                      firstDay: DateTime.utc(DateTime.monthsPerYear,),
-                      lastDay: DateTime.utc(2900, 8, 31),
+                      child: Column(
+                        children: [
+                          TableCalendar(
+                            calendarStyle: CalendarStyle(
+                              defaultTextStyle: cstmTextStyle(fs:18,fc: Colors.black54),
+                              weekendTextStyle: cstmTextStyle(fs:18,fc: Colors.black54),
+                              todayTextStyle: cstmTextStyle(fs:18,fc: Colors.white,),
+                              todayDecoration: BoxDecoration(
+                                gradient: LinearGradient(
+                                  colors: [
+                                    Color(0xffFE0098),
+                                    Color(0xffFF8A00),
+                                  ],
+                                ),
+                                shape: BoxShape.circle,),
+                            ),
+                            headerVisible: false,
+                            focusedDay: DateTime.now(),
+                            firstDay: DateTime.utc(DateTime.monthsPerYear,),
+                            lastDay: DateTime.utc(2900, 8, 31),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ],
