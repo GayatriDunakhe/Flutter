@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:table_calendar/table_calendar.dart';
 
 import 'Components/Header.dart';
 import 'Functions/CustomTextStyle.dart';
@@ -55,20 +56,6 @@ class _AddExercisePageState extends State<AddExercisePage> {
 
                   Container(
                     padding: EdgeInsets.all(20),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Row(
-                          children: [
-                            Icon(Icons.access_time,),
-                            SizedBox(width: 20,),
-                            Text("Ever afternoon", style: cstmTextStyle(fs: 18, fc: Colors.black54, fw: FontWeight.bold),),
-                          ],
-                        ),
-                        Icon(Icons.keyboard_arrow_right,),
-                      ],
-                    ),
-                  ),
                 ],
               ),
             ),
