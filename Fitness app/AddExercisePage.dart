@@ -56,6 +56,94 @@ class _AddExercisePageState extends State<AddExercisePage> {
 
                   Container(
                     padding: EdgeInsets.all(20),
+                    child: Column(
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Row(
+                              children: [
+                                ShaderMask(
+                                  blendMode: BlendMode.srcIn,
+                                  shaderCallback: (Rect bounds) => RadialGradient(
+                                      center: Alignment.center,
+//                                      radius: 0.5,
+                                      stops: [.5, 1],
+                                      colors: [
+                                        Colors.pink,
+                                        Colors.deepOrange,
+                                      ],
+                                    tileMode: TileMode.mirror,
+                                  ).createShader(bounds),
+                                  child: Icon(Icons.access_time,),
+                                ),
+//                                Icon(Icons.access_time,),
+                                SizedBox(width: 20,),
+                                Text("Ever afternoon", style: cstmTextStyle(fs: 18, fc: Colors.black54, fw: FontWeight.bold),)
+                              ],
+                            ),
+                            IconButton(
+                              onPressed: (){print("heke");},
+                              icon: Icon(Icons.keyboard_arrow_right,),
+                              splashRadius: 20,
+                            ),
+                          ],
+                        ),
+
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Row(
+                              children: [
+                                Icon(Icons.notifications_none,),
+                                SizedBox(width: 20,),
+                                Text("Add reminder", style: cstmTextStyle(fs: 18, fc: Colors.black54, fw: FontWeight.bold),),
+                              ],
+                            ),
+                            IconButton(
+                              onPressed: (){print("gi");},
+                              icon: Icon(Icons.keyboard_arrow_right,),
+                              splashRadius: 20,
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+
+                  Container(
+                    padding: EdgeInsets.all(20),
+                    child: Container(
+                      padding: EdgeInsets.all(20),
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(12.0),
+                      ),
+                      child: Column(
+                        children: [
+                          TableCalendar(
+                            calendarStyle: CalendarStyle(
+                              defaultTextStyle: cstmTextStyle(fs:18,fc: Colors.black54),
+                              weekendTextStyle: cstmTextStyle(fs:18,fc: Colors.black54),
+                              todayTextStyle: cstmTextStyle(fs:18,fc: Colors.white,),
+                              todayDecoration: BoxDecoration(
+                                gradient: LinearGradient(
+                                  colors: [
+                                    Color(0xffFE0098),
+                                    Color(0xffFF8A00),
+                                  ],
+                                ),
+                                shape: BoxShape.circle,),
+                            ),
+                            headerVisible: false,
+                            focusedDay: DateTime.now(),
+                            firstDay: DateTime.utc(DateTime.monthsPerYear,),
+                            lastDay: DateTime.utc(2900, 8, 31),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
                 ],
               ),
             ),
