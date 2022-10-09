@@ -18,9 +18,12 @@ class _AddExercisePageState extends State<AddExercisePage> {
           padding: EdgeInsets.only(top: 20.0),
           decoration: BoxDecoration(
               gradient: LinearGradient(
+                begin: Alignment(1.0, -2.0),
+//                end: Alignment(-1.0, -2.0),
                 colors: [
                   Color(0xFFFFA6DB).withOpacity(0.70),
                   Color(0xFFFF46B5).withOpacity(0.70),
+                  Colors.white
                 ],
               )
           ),
@@ -95,7 +98,21 @@ class _AddExercisePageState extends State<AddExercisePage> {
                           children: [
                             Row(
                               children: [
-                                Icon(Icons.notifications_none,),
+                                ShaderMask(
+                                  blendMode: BlendMode.srcIn,
+                                  shaderCallback: (Rect bounds) => RadialGradient(
+                                    center: Alignment.center,
+//                                      radius: 0.5,
+                                    stops: [.5, 1],
+                                    colors: [
+                                      Colors.pink,
+                                      Colors.deepOrange,
+                                    ],
+                                    tileMode: TileMode.mirror,
+                                  ).createShader(bounds),
+                                  child: Icon(Icons.notifications_none,),
+                                ),
+//                                Icon(Icons.notifications_none,),
                                 SizedBox(width: 20,),
                                 Text("Add reminder", style: cstmTextStyle(fs: 18, fc: Colors.black54, fw: FontWeight.bold),),
                               ],
@@ -144,6 +161,49 @@ class _AddExercisePageState extends State<AddExercisePage> {
                       ),
                     ),
                   ),
+
+                  Container(
+                    height: 110,
+                    width: MediaQuery.of(context).size.width,
+                    padding: EdgeInsets.all(20.0),
+                    color: Colors.white,
+                    child: Container(
+                      padding: EdgeInsets.only(top: 10.0, bottom: 10.0, left: 20.0, right: 20.0),
+                      decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(12.0),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.black12,
+                              offset: Offset(0, 0),
+                              blurRadius: 50,
+                              spreadRadius: 1,
+                            )
+                          ],
+                      ),
+                      child: Column(
+                        children: [
+                          Text("12days"),
+                          Text("Your current streak"),
+                        ],
+                      ),
+                    ),
+                  ),
+
+//                  Container(
+//                    height: 200,
+//                    width: 200,
+//                    decoration:BoxDecoration(
+//                      shape: BoxShape.circle,
+//                      gradient: LinearGradient(
+//                        colors: [
+//                          Color(0xffCB00FE),
+//                          Color(0xffFE0098),
+//                          Color(0xffFF8A00),
+//                        ],
+//                      ),
+//                    ),
+//                  ),
                 ],
               ),
             ),
