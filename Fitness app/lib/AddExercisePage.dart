@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:table_calendar/table_calendar.dart';
-
-import 'Components/Header.dart';
 import 'Functions/CustomTextStyle.dart';
 
 class AddExercisePage extends StatefulWidget{
@@ -183,8 +181,8 @@ class _AddExercisePageState extends State<AddExercisePage> {
                       ),
                       child: Column(
                         children: [
-                          Text("12days"),
-                          Text("Your current streak"),
+                          Text("12days", style: cstmTextStyle(fs:22,fc: Color(0xffFE0098))),
+                          Text("Your current streak", style: cstmTextStyle(fs:16,fc: Colors.black54),),
                         ],
                       ),
                     ),
