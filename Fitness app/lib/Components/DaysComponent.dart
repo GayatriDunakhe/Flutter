@@ -21,4 +21,39 @@ DaysComponent(){
   );
 }
 
+CalenderComponent(){
+  return Container(
+    padding: EdgeInsets.all(20),
+    child: Container(
+      padding: EdgeInsets.all(20),
+      decoration: BoxDecoration(
+        color: Colors.white.withOpacity(0.5),
+        borderRadius: BorderRadius.circular(12.0),
+      ),
+      child: Column(
+        children: [
+          TableCalendar(
+            calendarStyle: CalendarStyle(
+              defaultTextStyle: cstmTextStyle(fs:18,fc: Colors.black54),
+              weekendTextStyle: cstmTextStyle(fs:18,fc: Colors.black54),
+              todayTextStyle: cstmTextStyle(fs:18,fc: Colors.white,),
+              todayDecoration: BoxDecoration(
+                gradient: LinearGradient(
+                  colors: [
+                    Color(0xffFE0098),
+                    Color(0xffFF8A00),
+                  ],
+                ),
+                shape: BoxShape.circle,),
+            ),
+            headerVisible: false,
+            focusedDay: DateTime.now(),
+            firstDay: DateTime.utc(DateTime.monthsPerYear,),
+            lastDay: DateTime.utc(2900, 8, 31),
+          ),
+        ],
+      ),
+    ),
+  );
+}
 
