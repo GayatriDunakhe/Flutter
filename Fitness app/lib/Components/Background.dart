@@ -87,3 +87,24 @@ Circles(){
   );
 
 }
+
+ExercisePageBg(){
+  return Positioned(
+      top: 450,
+      right: 0,
+      child: Container(
+          height: 200,
+          width: 200,
+          decoration:BoxDecoration(
+            shape: BoxShape.circle,
+            gradient: LinearGradient(
+              colors: [
+                Color(0xffCB00FE),
+                Color(0xffFE0098),
+                Color(0xffFF8A00),
+              ],
+            ),
+          )
+      )
+  );
+}
