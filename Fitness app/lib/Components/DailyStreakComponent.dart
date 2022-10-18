@@ -3,10 +3,8 @@ import '../Functions/CustomTextStyle.dart';
 
 DailyStreakComponent(context){
   return  Container(
-    height: 110,
     width: context,
     padding: EdgeInsets.all(20.0),
-    color: Colors.white,
     child: Container(
       padding: EdgeInsets.only(top: 10.0, bottom: 10.0, left: 20.0, right: 20.0),
       decoration: BoxDecoration(
