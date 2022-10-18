@@ -90,11 +90,11 @@ Circles(){
 
 ExercisePageBg(){
   return Positioned(
-      top: 450,
-      right: 0,
+      top: 500,
+      right: -50,
       child: Container(
-          height: 200,
-          width: 200,
+          height: 150,
+          width: 150,
           decoration:BoxDecoration(
             shape: BoxShape.circle,
             gradient: LinearGradient(
